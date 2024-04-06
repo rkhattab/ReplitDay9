@@ -1,0 +1,28 @@
+print("-- List Generator --")
+print()
+print("Directions: You will be requested to enter the start number, end number, and increment to use to generate a list.")
+
+
+while True:
+  start = int(input("What number would you like to start with?: "))
+  end = int(input("What number would you like to end with?: "))
+  increment = int(input("What increment would you like to use?: "))
+  if increment == 0:
+    print("Increment cannot equal zero, because we will not be able to create a list without an increment.")
+    continue
+  elif start == end:
+    print("Try again, if start = end then we can't create a list.")
+    continue
+  elif start > end and increment > 0:
+    print("You can start with a larger number but your increment will have to be a negative number to reach your end input.")
+    continue
+  elif start < end and increment <0:
+    print("Try again, if you have a negative increment we can't create your list because your end input is larger than your start input.")
+    continue
+  else:
+    print("Awesome! Your entries look super!")
+    print()
+    print("Here is your list:")
+  for i in range(start, end, increment):
+    print(i)
+  break
